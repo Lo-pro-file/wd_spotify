@@ -55,12 +55,12 @@ async def spotify_dl(_,message):
             for item in items:
                 # you can update this chat action #cForChat = await message.reply_chat_action("record_audio")
                 sleeeps = await sleep (0.9)
-                PForCopy = await message.reply_photo(item[5],caption=f"✔️ Episode Name : `{item[3]}`\n🕔 Duration : {item[4]//60}:{item[4]%60}")
+                PForCopy = await message.reply_photo(item[5],caption=f"✤ 𝐄𝐩𝐢𝐬𝐨𝐝𝐞 𝐍𝐚𝐦𝐞 ● `{item[3]}`\n✤ 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 ● {item[4]//60}:{item[4]%60}")
                 fileLink = await ytdl_down(audio_opt(randomdir,item[2]),f"https://open.spotify.com/episode/{item[0]}")
                 thumbnail = await thumb_down(item[5],item[0])
                 sleeping  = await sleep(2.0)
                 DForChat =  await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
-                #reply = await message.reply_text(f"sorry we removed support of  episode 😔 pls send other types")
+                #reply = await message.reply_text(f"SeD sorry we removed support of  episode 😔 pls send other types")
                 AForCopy = await message.reply_audio(fileLink,title=item[3].replace("_"," "),performer="Spotify",duration=int(item[4]),caption=f"[{item[3]}](https://open.spotify.com/episode/{item[0]})",thumb=thumbnail,quote=True)
                 shutil.rmtree(randomdir)
                 if LOG_GROUP:
@@ -71,13 +71,13 @@ async def spotify_dl(_,message):
             song = await fetch_spotify_track(client,item_id)
             # you can update to latest chat action #cForChat = await message.reply_chat_action("record_audio")
             #sleeeps = await sleep (0.9)
-            PForCopy = await message.reply_photo(song.get('cover'),caption=f"🎧 Title : `{song['name']}­`\n🎤 Artist : `{song['artist']}­`\n💽 Album : `{song['album']}­`\n🗓 Release Year: `{song['year']}­`")
+            PForCopy = await message.reply_photo(song.get('cover'),caption=f"✤ 𝐓𝐢𝐭𝐥𝐞 ● `{song['name']}­`\n✤ 𝐀𝐫𝐭𝐢𝐬𝐭 ● `{song['artist']}­`\n✤ 𝐀𝐥𝐛𝐮𝐦 ● `{song['album']}­`\n✤ 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐘𝐞𝐚𝐫 ● `{song['year']}­`")
             path = await download_songs(song,randomdir)
             thumbnail = await thumb_down(song.get('cover'),song.get('deezer_id'))
             dForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
             audio = FLAC(path)
             audio["YEAR_OF_RELEASE"] = song.get('year')
-            audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
+            audio["WEBSITE"] = "http://t.me/Spotify_Pro_v1_bot"
             audio["GEEK_SCORE"] = "9"
             audio["ARTIST"] = song.get('artist')                                                                            
             audio["ALBUM"] = song.get('album')
@@ -110,14 +110,14 @@ async def spotify_dl(_,message):
                 song = await fetch_spotify_track(client,track.get('track').get('id'))
                 #you can update to latest chat action #cForChat = await message.reply_chat_action("record_audio")
                #sleeeps = await sleep (0.9)
-                PForCopy = await message.reply_photo(song.get('cover'),caption=f"🎧 Title : `{song['name']}­`\n🎤 Artist : `{song['artist']}­`\n💽 Album : `{song['album']}­`\n🗓 Release Year: `{song['year']}­`\n🔢 Track No: `{song['playlist_num']}­`\n🔢 Total Track: `{total_tracks}­`")
+                PForCopy = await message.reply_photo(song.get('cover'),caption=f"✤ 𝐓𝐢𝐭𝐥𝐞 ● `{song['name']}­`\n✤ 𝐀𝐫𝐭𝐢𝐬𝐭 ● `{song['artist']}­`\n✤ 𝐀𝐥𝐛𝐮𝐦 ● `{song['album']}­`\n✤ 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐘𝐞𝐚𝐫 ● `{song['year']}­`\n✤ 𝐓𝐫𝐚𝐜𝐤 𝐍𝐨 ● `{song['playlist_num']}­`\n✤ 𝐓𝐨𝐭𝐚𝐥 𝐓𝐫𝐚𝐜𝐤 ● `{total_tracks}­`")
                 path = await download_songs(song,randomdir)
                 thumbnail = await thumb_down(song.get('cover'),song.get('deezer_id'))
                 cForChat = await message.reply_chat_action(enums.ChatAction.UPLOAD_AUDIO)
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
+                audio["WEBSITE"] = "http://t.me/Spotify_Pro_v1_bot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                           
                 audio["ALBUM"] = song.get('album')
@@ -148,13 +148,13 @@ async def spotify_dl(_,message):
             for track in tracks['items']:
                 song = await fetch_spotify_track(client,track.get('id'))
                #sleeeps = await sleep (0.9)
-                PForCopy = await message.reply_photo(song.get('cover'),caption=f"🎧 Title : `{song['name']}­`\n🎤 Artist : `{song['artist']}­`\n💽 Album : `{song['album']}­`\nq🗓 Release Year: `{song['year']}­`")
+                PForCopy = await message.reply_photo(song.get('cover'),caption=f"✤ 𝐓𝐢𝐭𝐥𝐞 ● `{song['name']}­`\n✤ 𝐀𝐫𝐭𝐢𝐬𝐭 ● `{song['artist']}­`\n✤ 𝐀𝐥𝐛𝐮𝐦 ● `{song['album']}­`\nq✤ 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 𝐘𝐞𝐚𝐫 ● `{song['year']}­`")
                 path = await download_songs(song,randomdir)
                 thumbnail = await thumb_down(song.get('cover'),song.get('deezer_id'))
                 sleeping  = await sleep(0.8)
                 audio = FLAC(path)
                 audio["YEAR_OF_RELEASE"] = song.get('year')
-                audio["WEBSITE"] = "https://t.me/Spotify_downloa_bot"
+                audio["WEBSITE"] = "http://t.me/Spotify_Pro_v1_bot"
                 audio["GEEK_SCORE"] = "9"
                 audio["ARTIST"] = song.get('artist')                                                                         
                 audio["ALBUM"] = song.get('album')
@@ -192,12 +192,12 @@ async def spotify_dl(_,message):
 
 @Mbot.on_callback_query(filters.regex(r"feed"))
 async def feedback(_,query):
-      await query.message.edit(f"Feedback 🏴‍☠️",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=spotify_downloa_bot")]]))
+      await query.message.edit(f"Feedback ❣️",
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Press here", url="https://t.me/dailychannelsbot?start=Spotify_Pro_v1_bot")]]))
 
 @Mbot.on_callback_query(filters.regex(r"bug"))                                                                                                          
 async def bug(_,query):                                                                                                                                  
       await query.message.edit(f"please report to the dev with above error occurred message")
       await sleep(2.3)
       await query.message.edit(f"Bug Report 🪲",
-                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Report to dev ", url="https://t.me/masterolic")]]))
+                  reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭 ⁪⁬⁮⁮⁮", url="https://t.me/Farooq_is_KING")]]))
