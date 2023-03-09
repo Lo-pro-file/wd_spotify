@@ -6,7 +6,7 @@
     "music",
     "music downloader"
   ],
-  "repository": "https://github.com/angel-loveyou/",
+  "repository": "https://github.com/angel-loveyou/wd_spotify/",
   "website": "https://t.me/Spotify_Pro_v1_bot",
   "success_url": "https://t.me/Spotify_Pro_v1_bot",
   "env": {
