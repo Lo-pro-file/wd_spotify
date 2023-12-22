@@ -2,7 +2,7 @@
 pyrogram==2.0.38
 tgcrypto
 lyricsgenius
-https://github.com/Masterolic/yt-dlp/archive/refs/heads/master.zip
+git+https://github.com/yt-dlp/yt-dlp/
 python-dotenv
 requests
 asgiref
